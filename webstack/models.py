@@ -35,7 +35,7 @@ class FirstMenu(BaseMenu):
         """判断一级菜单下面是否有网站"""
         num = 0
         for second_menu in self.second_menus.all():
-            num += second_menu.navigation_sites.count()
+            num += NavigationSite.objects.filter(menu=second_menu, is_show=True).count()
         return num
 
 
@@ -49,7 +49,7 @@ class SecondMenu(BaseMenu):
         ordering = ['sort_order']
 
     def get_site_list(self):
-        return NavigationSite.objects.filter(menu=self).order_by('sort_order')
+        return NavigationSite.objects.filter(menu=self, is_show=True).order_by('sort_order')
 
 
 class NavigationSite(models.Model):
@@ -65,6 +65,8 @@ class NavigationSite(models.Model):
                                processors=[ResizeToFill(50, 50)],
                                help_text='上传图片大小建议使用1:1的宽高比，为了清晰度原始图片宽度应该超过50px'
                                )
+    is_show = models.BooleanField('是否展示', blank=True, null=True, default=True)
+    not_show_reason = models.CharField('禁用原因', max_length=50, blank=True, null=True)
 
     menu = models.ForeignKey(SecondMenu, verbose_name='所属二级菜单', on_delete=models.PROTECT,
                              related_name='navigation_sites')

@@ -28,7 +28,8 @@ class SecondMenuAdmin(admin.ModelAdmin):
 @admin.register(NavigationSite)
 class NavigationSiteAdmin(admin.ModelAdmin):
     date_hierarchy = 'create_date'
-    list_display = ('id', 'name', 'link', 'create_date', 'menu', 'sort_order')
+    list_display = ('id', 'name', 'link',
+                    'create_date', 'menu', 'sort_order', 'is_show', 'not_show_reason')
     list_display_links = ('name',)
     list_filter = ('create_date', 'sort_order', 'menu')
     list_editable = ('menu', 'sort_order')
