@@ -1,0 +1,39 @@
+{% extends 'webstack/base.html' %}
+
+{% block title %}我的导航网站{% endblock %}
+
+{% block meta %}
+    <link rel="shortcut icon" href="/static/webstack/assets/images/favicon.png">
+{% endblock %}
+
+{% block top-file %}{% endblock %}
+
+{% block logo %}
+    <div class="logo">
+        <a href="#" class="logo-expanded">
+            <img src="/static/webstack/assets/images/logo@2x.png" width="100%" alt=""/>
+        </a>
+        <a href="#" class="logo-collapsed">
+            <img src="/static/webstack/assets/images/logo-collapsed@2x.png" width="40" alt=""/>
+        </a>
+    </div>
+{% endblock %}
+
+{% block navbar-list %}
+    <li style="min-height: 75px;"><a href="/">首页</a></li>
+{% endblock %}
+
+{% block main-menu %}{% endblock %}
+
+{% block footer %}
+    <div class="footer-text">
+        &copy; 2017-2022
+        <a href="https://github.com/WebStackPage/WebStackPage.github.io">
+            <strong>WebStack</strong>
+        </a>
+        design by
+        <a href="https://www.viggoz.com" target="_blank">
+            <strong>Viggo</strong>
+        </a>
+    </div>
+{% endblock %}
