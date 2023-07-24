@@ -1,9 +1,10 @@
 {% extends 'webstack/base.html' %}
+{% load static %}
 
 {% block title %}我的导航网站{% endblock %}
 
 {% block meta %}
-    <link rel="shortcut icon" href="/static/webstack/assets/images/favicon.png">
+    <link rel="shortcut icon" href="{% static 'webstack/assets/images/favicon.png' %}">
 {% endblock %}
 
 {% block top-file %}{% endblock %}
@@ -11,10 +12,10 @@
 {% block logo %}
     <div class="logo">
         <a href="#" class="logo-expanded">
-            <img src="/static/webstack/assets/images/logo@2x.png" width="100%" alt=""/>
+            <img src="{% static 'webstack/assets/images/logo@2x.png' %}" width="100%" alt=""/>
         </a>
         <a href="#" class="logo-collapsed">
-            <img src="/static/webstack/assets/images/logo-collapsed@2x.png" width="40" alt=""/>
+            <img src="{% static 'webstack/assets/images/logo-collapsed@2x.png' %}" width="40" alt=""/>
         </a>
     </div>
 {% endblock %}
