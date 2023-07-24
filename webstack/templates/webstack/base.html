@@ -49,7 +49,7 @@
                                 </a>
                                 <ul>
                                     {% for each in menu.get_second_menu_list %}
-                                        {% if each.navigation_sites.all %}
+                                        {% if each.get_site_list %}
                                             <li>
                                                 <a href="#{{ each.name }}" class="smooth">
                                                     <span class="title">{{ each.name }}</span>
@@ -88,13 +88,13 @@
 
         {% for menu in first_menus %}
             {% for second_menu in menu.second_menus.all %}
-                {% if second_menu.navigation_sites.all %}
+                {% if second_menu.get_site_list %}
                     <h4 class="text-gray" id="{{ second_menu.name }}">
                         <i class="{{ second_menu.icon }}" style="margin-right: 7px;"></i>
                         {{ second_menu.name }}
                     </h4>
                     <div class="row">
-                        {% for web in second_menu.navigation_sites.all %}
+                        {% for web in second_menu.get_site_list %}
                             <div class="col-sm-3">
                                 <div class="xe-widget xe-conversations box2 label-info"
                                      onclick="window.open('{{ web.link }}', '_blank')" data-toggle="tooltip"
