@@ -35,7 +35,7 @@ step 4 添加到路由
 
 ```python
 urlpatterns = [
-    path('nav/', include('webstack.urls')),
+    path('nav/', include(('webstack.urls', 'webstack'), namespace='webstack')),
 ]
 ```
 
