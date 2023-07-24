@@ -46,5 +46,7 @@ step 5 前往管理界面添加数据即可显示到前台
 
 ## 原项目地址
 
+本项目是基于Webstack网址导航项目改变而来，将静态导航网站改成了有后台的Django项目，原项目地址如下：
+
 https://github.com/WebStackPage/WebStackPage.github.io
 
