@@ -2,6 +2,9 @@
 
 一个导航APP，可以直接安装到django当做一个独立的应用，效果可以看我博客 https://tendcode.com/nav/
 
+
+## 使用步骤
+
 step 1 安裝包依赖
 
 ```bash
@@ -40,4 +43,8 @@ urlpatterns = [
 ```
 
 step 5 前往管理界面添加数据即可显示到前台
+
+## 原项目地址
+
+https://github.com/WebStackPage/WebStackPage.github.io
 
