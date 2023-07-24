@@ -37,7 +37,10 @@ python manage.py migrate
 step 4 添加到路由
 
 ```python
+#将应用路由添加到Django项目的根urls.py文件中
+
 urlpatterns = [
+    ...
     path('nav/', include(('webstack.urls', 'webstack'), namespace='webstack')),
 ]
 ```
