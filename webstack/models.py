@@ -9,7 +9,7 @@ from imagekit.processors import ResizeToFill
 # 菜单父模型
 class BaseMenu(models.Model):
     name = models.CharField('名称', max_length=10)
-    icon = models.CharField('图标', max_length=30)
+    icon = models.CharField('图标', max_length=30, help_text='Font Awesome图标库格式，如:fa fa-star-o')
     sort_order = models.IntegerField('排序', default=99, help_text='自定义排序')
     create_date = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     update_date = models.DateTimeField(verbose_name='修改时间', auto_now=True)
@@ -62,7 +62,7 @@ class NavigationSite(models.Model):
     logo = ProcessedImageField(upload_to='web/upload/%Y/%m/%d/',
                                default='web/default/default.png',
                                verbose_name='Logo',
-                               processors=[ResizeToFill(50, 50)],
+                               processors=[ResizeToFill(120, 120)],
                                help_text='上传图片大小建议使用1:1的宽高比，为了清晰度原始图片宽度应该超过50px'
                                )
     is_show = models.BooleanField('是否展示', blank=True, null=True, default=True)
