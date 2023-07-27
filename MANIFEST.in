@@ -2,3 +2,4 @@ include LICENSE
 include README.md
 recursive-include webstack *
 recursive-exclude django_webstack *
+global-exclude __pycache__/*
