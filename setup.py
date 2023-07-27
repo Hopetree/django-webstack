@@ -3,7 +3,8 @@
 # Date: 2023/7/24
 from setuptools import find_packages, setup
 
-VERSION = '1.3.1'
+# 这里的版本号根据tag去动态设置
+VERSION = 'x.x.x'
 
 with open('README.md', 'r', encoding='utf-8') as fp:
     long_description = fp.read()
