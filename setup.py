@@ -19,7 +19,7 @@ setup(
     long_description_content_type="text/markdown",
     url='https://github.com/Hopetree/django-webstack',
     keywords='django webstack navigation',
-    packages=find_packages(),
+    packages=find_packages(exclude=['django_webstack']),
     include_package_data=True,
     install_requires=[
         'Django >= 2.2',
