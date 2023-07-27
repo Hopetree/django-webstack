@@ -4,7 +4,7 @@
 from setuptools import find_packages, setup
 
 # 这里的版本号根据tag去动态设置
-VERSION = 'x.x.x'
+VERSION = '1.0.0'
 
 with open('README.md', 'r', encoding='utf-8') as fp:
     long_description = fp.read()
