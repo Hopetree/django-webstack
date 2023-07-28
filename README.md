@@ -12,7 +12,13 @@ step 1 安裝包依赖
 # 安装django-imagekit是为了上传网址logo
 pip install Pillow==9.3.0
 pip install django-imagekit==4.0.2
-pip install django-webstack
+pip install django-webstack>=1.4.2
+```
+
+如果pip设置了非官方源（比如豆瓣源）导致安装失败，可能是没有同步官方的资源，此时可以临时设置成官方源试试:
+
+```shell
+pip install django-webstack>=1.4.2 --index-url https://pypi.org/simple --trusted-host pypi.org
 ```
 
 step 2 配置中添加应用
