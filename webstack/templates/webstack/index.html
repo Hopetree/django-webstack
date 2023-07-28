@@ -1,10 +1,12 @@
 {% extends 'webstack/base.html' %}
 {% load static %}
 
-{% block title %}我的导航网站{% endblock %}
+{% block title %}导航网站{% endblock %}
 
 {% block meta %}
     <link rel="shortcut icon" href="{% static 'webstack/assets/images/favicon.png' %}">
+    <meta name="keywords" content="网址导航">
+    <meta name="description" content="常用网址导航聚合站">
 {% endblock %}
 
 {% block top-file %}{% endblock %}
@@ -29,12 +31,12 @@
 {% block footer %}
     <div class="footer-text">
         &copy; 2023
-        <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank">
-            <strong>WebStack</strong>
+        <a href="https://github.com/Hopetree/django-webstack" target="_blank">
+            <strong>django-webstack</strong>
         </a>
         design by
-        <a href="https://github.com/Hopetree/django-webstack" target="_blank">
-            <strong>Hopetree</strong>
+        <a href="https://github.com/WebStackPage/WebStackPage.github.io" target="_blank">
+            <strong>WebStack</strong>
         </a>
     </div>
 {% endblock %}
