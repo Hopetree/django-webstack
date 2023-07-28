@@ -2,12 +2,12 @@
 
 一个导航APP，可以直接安装到django当做一个独立的应用，效果可以看我博客 https://tendcode.com/nav/
 
-
 ## 使用步骤
 
 step 1 安裝包依赖
 
 ```bash
+# 安装django-imagekit是为了上传网址logo
 pip install Pillow==9.3.0
 pip install django-imagekit==4.0.2
 pip install django-webstack
@@ -37,7 +37,7 @@ python manage.py migrate
 step 4 添加到路由
 
 ```python
-#将应用路由添加到Django项目的根urls.py文件中
+# 将应用路由添加到Django项目的根urls.py文件中
 
 urlpatterns = [
     ...
@@ -46,6 +46,65 @@ urlpatterns = [
 ```
 
 step 5 前往管理界面添加数据即可显示到前台
+
+应用会生成3张表，对应3个模型：一级菜单-二级菜单-导航网站，先添加一级菜单然后添加二级菜单，然后添加导航网址，一层一层关联即可，如果想要直接显示一级菜单，则可以添加一个跟一级菜单同名的二级菜单。
+
+## 个性化配置（非必须）
+
+应用本身安装就可以使用，但是你也可以自定义页面，包括页面的排版和静态资源都可以自定义，具体方式如下：
+
+可以在项目跟目录的templates目录下创建一个webstack目录，并在其中创建一个index.html文件，用来覆盖原应用的index.html文件，原文件的内容自行查看代码，可以参考我项目的修改：https://github.com/Hopetree/izone/blob/master/templates/webstack/index.html
+
+```html
+{% extends 'webstack/base.html' %}
+{% load static %}
+
+{% block title %}程序员网址导航_TendCode{% endblock %}
+
+{% block meta %}
+<link rel="shortcut icon" href="{% static 'blog/img/favicon.ico' %}" type="image/x-icon"/>
+<meta name="keywords" content="程序员网址导航,网址收藏,tendcode.com">
+<meta name="description" content="程序员常用网址导航聚合站">
+{% endblock %}
+
+{% block top-file %}{% endblock %}
+
+{% block logo %}
+<div class="logo">
+    <a href="{% url 'webstack:webstack_index' %}" class="logo-expanded">
+        <img src="{% static 'blog/img/nav-logo.png' %}" height="40" alt=""/>
+    </a>
+    <a href="{% url 'webstack:webstack_index' %}" class="logo-collapsed">
+        <img src="{% static 'webstack/assets/images/logo-collapsed@2x.png' %}" height="40" alt=""/>
+    </a>
+</div>
+{% endblock %}
+
+{% block navbar-list %}
+<li style="min-height: 75px;"><a href="{% url 'blog:index' %}">首页</a></li>
+<li style="min-height: 75px;"><a href="{% url 'blog:subject_index' %}">博客专题</a></li>
+<li style="min-height: 75px;"><a href="{% url 'tool:total' %}">在线工具</a></li>
+<li style="min-height: 75px;"><a href="{% url 'blog:about' %}">关于</a></li>
+{% endblock %}
+
+{% block main-menu %}{% endblock %}
+
+{% block footer %}
+<div class="footer-text">
+    &copy; {{ this_year }}
+    <a href="https://github.com/Hopetree/django-webstack">
+        <strong>django-webstack</strong>
+    </a>
+    design by
+    <a href="https://github.com/Hopetree" target="_blank">
+        <strong>Hopetree</strong>
+    </a>
+</div>
+{% endblock %}
+
+```
+
+你可以自定义网页标题、关键词和描述，并且可以添加自定义的静态文件包括css和js文件，并且可以自定义页面额外的菜单，一级页脚，甚至整个页面的排版。
 
 ## 原项目地址
 
