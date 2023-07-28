@@ -15,6 +15,21 @@
     <link rel="stylesheet" href="{% static 'webstack/assets/css/xenon-skins.css' %}">
     <link rel="stylesheet" href="{% static 'webstack/assets/css/nav.css' %}">
     <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <style>
+        .sidebar-menu .main-menu a {
+            padding: 14px 4px;
+        }
+
+        .sidebar-menu .main-menu a > i {
+            margin-right: 8px;
+            width: 18px;
+            max-height: 18px;
+        }
+
+        .sidebar-menu .main-menu ul li a {
+            padding-left: 34px;
+        }
+    </style>
     {% block top-file %}{% endblock %}
 </head>
 
