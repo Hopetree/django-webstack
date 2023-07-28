@@ -1,5 +1,7 @@
 # django-webstack
 
+![](https://camo.githubusercontent.com/cd5db39ba59752822b7770d5074571fc4db1660af9066dfdb9953ff53ed7195e/687474703a2f2f7777772e776562737461636b2e63632f6173736574732f696d616765732f707265766965772e676966)
+
 一个导航APP，可以直接安装到django当做一个独立的应用，效果可以看我博客 https://tendcode.com/nav/
 
 ## 使用步骤
