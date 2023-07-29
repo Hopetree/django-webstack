@@ -75,3 +75,6 @@ class NavigationSite(models.Model):
         verbose_name = '导航网站'
         verbose_name_plural = verbose_name
         ordering = ['-create_date']
+
+    def __str__(self):
+        return self.name
